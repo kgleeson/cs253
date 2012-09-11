@@ -35,14 +35,7 @@ class MainPage(webapp2.RequestHandler):
         html = f.read()
     def write_form(self, **kwargs):
         if not kwargs:
-            kwargs = {'username':'',
-                    'password':'',
-                    'verify':'',
-                    'email':'',
-                    'usererror':'',
-                    'passerror':'',
-                    'verifyerror':'',
-                    'emailerror':''}
+            kwargs = self.data
         self.response.write(self.html % kwargs)
 
     def get(self):
